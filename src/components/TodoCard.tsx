@@ -11,7 +11,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import DeletePopUp from "./DeletePopUp";
-import EditPopUp from "./EditPopUp";
+import EditPopUp from "./EditButton";
 import { useTodo } from "../hooks/UseTodo";
 
 type TodoCardProps = {

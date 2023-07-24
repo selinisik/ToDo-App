@@ -11,7 +11,7 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 import { useTodo } from "../hooks/UseTodo";
-import AddPopUp from "./AddPopUp";
+import AddPopUp from "./AddButton";
 import TodoCard from "./TodoCard";
 import DeleteAllPopUp from "./DeleteAllPopUp";
 import { useRouter } from "next/router";
