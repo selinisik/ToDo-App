@@ -62,7 +62,12 @@ const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
     const SortOptionMap: Record<
       string,
       { sign: 1 | -1; propName: "createDate" | "updateDate" }
-    > = { newest: { sign: 1, propName: "createDate" } };
+    > = {
+      "newest": { sign: 1, propName: "createDate" },
+      "oldest": { sign: -1, propName: "createDate" },
+      "newest-updated": { sign: 1, propName: "updateDate" },
+      "oldest-updated": { sign: -1, propName: "updateDate" },
+    };
 
     const { sign, propName } = SortOptionMap[sortOption];
     sortedTodos = todos
@@ -136,7 +141,9 @@ const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
     setAllTodos(updatedTodos);
   };
 
-  useEffect(() => {}, [sortOption]);
+  useEffect(() => {
+    setAllTodos(todos);
+  }, [sortOption]);
 
   const todoContextValue: TodoContextType = {
     todos,
